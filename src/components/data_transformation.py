@@ -14,7 +14,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 
 from src.utills import save_object 
-from src.components.data_ingestion import DataIngestion
+
 
 @dataclass
 class DataTransformationConfig:
@@ -114,8 +114,3 @@ class DataTransformation:
             
         except Exception as e:
             raise CustomException(e, sys)
-        
-
-if __name__ == "__main__":
-    train_data,test_data= DataIngestion().initiate_data_ingestion()
-    DataTransformation().initiate_data_transformation(train_data,test_data)

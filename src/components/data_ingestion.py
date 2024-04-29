@@ -8,6 +8,9 @@ import pandas as pd
 
 from dataclasses import dataclass
 
+# from src.components.data_transformation import DataTransformation
+# from src.components.model_trainer import ModelTrainer
+
 @dataclass
 class DataIngestionConfig:
     train_data_path: str=os.path.join('artifacts',"train.csv")
@@ -44,6 +47,8 @@ class DataIngestion:
         except Exception as e:
             raise CustomException(e, sys)
         
-if __name__ == "__main__":
-    train_data,test_data= DataIngestion().initiate_data_ingestion()
+# if __name__ == "__main__":
+#     train_data,test_data = DataIngestion().initiate_data_ingestion()
+#     train_arr,test_arr,_ = DataTransformation().initiate_data_transformation(train_data,test_data)
+#     print(ModelTrainer().initiate_model_trainer(train_arr,test_arr))
 
